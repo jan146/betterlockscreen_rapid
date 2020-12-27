@@ -58,10 +58,6 @@ More information can be found at [i3lock-fancy-rapid][].
 - [i3lock-color][]
 - [i3lock-fancy-rapid][]
 
-## LICENSE
-
-MIT
-
 [i3lock-color]: https://github.com/Raymo111/i3lock-color
 [i3lock-fancy-rapid]: https://github.com/yvbbrjdr/i3lock-fancy-rapid
 [betterlockscreen]: https://github.com/pavanjadhaw/betterlockscreen
