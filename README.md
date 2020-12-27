@@ -1,3 +1,14 @@
+# Differences with this fork
+
+The only difference is that you can pass additional commands as an argument to i3lock-fancy-rapid. That's it.
+
+Usage: `betterlockscreen_rapid <radius> <times> [command (optional)]`
+  
+The third argument (optional commands) will be passed to i3lock-fancy-rapid and executed upon unlocking the system.
+
+All other credit goes to the original creator:
+https://github.com/oakszyjrnrdy/betterlockscreen_rapid.
+
 # betterlockscreen_rapid
 
 This is a shell script wrapper for [i3lock-fancy-rapid][] inspired by [betterlockscreen][].
@@ -16,22 +27,6 @@ Here is an example:
 
 ## Installation
 
-### Package Manager
-
-#### Arch Linux
-
-Install the aur package [betterlockscreen_rapid-git](https://aur.archlinux.org/packages/betterlockscreen_rapid-git).
-
-#### Gentoo Linux
-
-Thanks for [jian-lin](https://github.com/jian-lin)'s contribution.
-
-Install the [GURU](https://wiki.gentoo.org/wiki/Project:GURU) package `x11-misc/betterlockscreen_rapid`. Please refer to [this](https://github.com/oakszyjrnrdy/betterlockscreen_rapid/issues/1#issue-771802017) for more information.
-
-#### Others
-
-If you want to package it for other distributions, please let me known and I'll put the package information here.
-
 ### Manual Installation
 
 1. Install all the dependencies.
@@ -49,11 +44,12 @@ Note that `$XDG_CONFIG_HOME` defaults to `$HOME/.config/`.
 ## Usage
 
 ```bash
-betterlockscreen_rapid radius times
+betterlockscreen_rapid radius times [command (optional)]
 ```
 
 - `radius` is the kernel size of the box filter.
 - `times` is the number of times we filter the image.
+- `command (optional)` is the command to be executed upon unlocking the system.
 
 More information can be found at [i3lock-fancy-rapid][].
 
