@@ -30,7 +30,7 @@ Here is an example:
 ### Manual Installation
 
 1. Install all the dependencies.
-2. Copy `betterlockscreen_rapid` to `/usr/bin/` or somewhere else in you `$PATH`.
+2. Copy `betterlockscreen_rapid` to `/usr/bin/` or somewhere else in your `$PATH`.
 3. Copy `betterlockscreen_rapid.conf` to `/etc/`.
 
 ## Configuration
