@@ -6,7 +6,7 @@
 
 # check args
 if [ "$#" -lt "2" ]; then
-	echo "Usage: $0 radius time" >&2
+	echo "Usage: $0 radius time <command (optional)>" >&2
 	exit 3
 fi
 if [ "$1" -gt "0" ]; then
@@ -38,7 +38,6 @@ if [ -f "$user_config_file" ]; then
 	source "$user_config_file"
 fi
 
-# echo "\$lockargs is empty"
 # run command
 i3lock-fancy-rapid "$radius" "$time" \
 	-t \
