@@ -5,7 +5,7 @@
 # Project Repository: https://github.com/oakszyjrnrdy/betterlockscreen_rapid
 
 # check args
-if [ "$#" -ne "2" ]; then
+if [ "$#" -lt "2" ]; then
 	echo "Usage: $0 radius time" >&2
 	exit 3
 fi
@@ -21,6 +21,13 @@ else
 	echo "Invalid argument time $2" >&2
 	exit 2
 fi
+for arg in $( seq 3 $# )
+do
+    # echo "${!arg}"
+    lockargs="$lockargs "${!arg}""
+done
+# echo $lockargs
+
 # read config
 config_file="betterlockscreen_rapid.conf"
 # system config
@@ -30,6 +37,8 @@ user_config_file="${XDG_CONFIG_HOME:-$HOME/.config}/betterlockscreen_rapid/$conf
 if [ -f "$user_config_file" ]; then
 	source "$user_config_file"
 fi
+
+# echo "\$lockargs is empty"
 # run command
 i3lock-fancy-rapid "$radius" "$time" \
 	-t \
@@ -43,4 +52,4 @@ i3lock-fancy-rapid "$radius" "$time" \
 	--radius "20" --ring-width "4" --veriftext '' --wrongtext '' \
 	--verifcolor "$verifcolor" --timecolor "$timecolor" --datecolor "$datecolor" \
 	--time-font "$font" --date-font "$font" --layout-font "$font" --verif-font "$font" --wrong-font "$font" \
-	--noinputtext '' --force-clock --pass-media-keys "$lockargs"
+	--noinputtext '' --force-clock --pass-media-keys -n; $lockargs
