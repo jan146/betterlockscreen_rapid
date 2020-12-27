@@ -30,8 +30,8 @@ Here is an example:
 Before installing, make sure you have all the dependencies already installed (listed at the bottom of the page).
 Then run the following commands in your terminal:
 
-`git clone https://github.com/jan146/betterlockscreen_rapid.git  
-cd betterlockscreen_rapid  
+`git clone https://github.com/jan146/betterlockscreen_rapid.git <br />
+cd betterlockscreen_rapid <br />
 sudo ./install.sh`
 
 ## Configuration
