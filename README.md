@@ -19,7 +19,7 @@ Here is an example:
 
 ![screenshot](screenshot.png)
 
-## Feature
+## Features
 
 - rapid
 - good-looking
