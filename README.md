@@ -2,7 +2,7 @@
 
 The only difference is that you can pass additional commands as an argument to i3lock-fancy-rapid. That's it.
 
-Usage: `betterlockscreen_rapid <radius> <times> [command (optional)]`
+Installation and usage sections have been updated accordingly.
   
 The third argument (optional commands) will be passed to i3lock-fancy-rapid and executed upon unlocking the system.
 
@@ -27,11 +27,12 @@ Here is an example:
 
 ## Installation
 
-### Manual Installation
+Before installing, make sure you have all the dependencies already installed (listed at the bottom of the page).
+Then run the following commands in your terminal:
 
-1. Install all the dependencies.
-2. Copy `betterlockscreen_rapid` to `/usr/bin/` or somewhere else in your `$PATH`.
-3. Copy `betterlockscreen_rapid.conf` to `/etc/`.
+`git clone https://github.com/jan146/betterlockscreen_rapid.git
+cd betterlockscreen_rapid
+sudo ./install.sh`
 
 ## Configuration
 
@@ -53,7 +54,7 @@ betterlockscreen_rapid radius times [command (optional)]
 
 More information can be found at [i3lock-fancy-rapid][].
 
-## Dependency
+## Dependencies
 
 - [i3lock-color][]
 - [i3lock-fancy-rapid][]
