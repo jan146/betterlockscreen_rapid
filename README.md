@@ -1,6 +1,6 @@
 # Differences with this fork
 
-The only difference is that you can pass additional commands as an argument to i3lock-fancy-rapid. That's it.
+This fork allows you to pass additional commands as an argument to i3lock-fancy-rapid.
 
 Installation and usage sections have been updated accordingly.
   
