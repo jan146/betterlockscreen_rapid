@@ -1,7 +1,7 @@
 # Differences with this fork
 
-* Execute commands after unlocking the system
 * Execute commands before locking the system
+* Execute commands after unlocking the system
 * Set default radius and times parameters
 
 Installation and usage sections have been updated accordingly.
