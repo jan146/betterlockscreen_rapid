@@ -1,10 +1,10 @@
 # Differences with this fork
 
-This fork allows you to pass additional commands as an argument to i3lock-fancy-rapid.
+* Execute commands after unlocking the system
+* Execute commands before locking the system
+* Set default radius and times parameters
 
 Installation and usage sections have been updated accordingly.
-  
-The third argument (optional commands) will be passed to i3lock-fancy-rapid and executed upon unlocking the system.
 
 All other credit goes to the original creator:
 https://github.com/oakszyjrnrdy/betterlockscreen_rapid.
@@ -21,9 +21,9 @@ Here is an example:
 
 ## Features
 
-- rapid
-- good-looking
-- configurable
+* Rapid
+* Good-looking
+* Configurable
 
 ## Installation
 
@@ -44,15 +44,35 @@ You can use `betterlockscreen_rapid.conf` as a reference. More information can b
 
 Note that `$XDG_CONFIG_HOME` defaults to `$HOME/.config/`.
 
+In this particular fork, you can add 4 additional parameters to these config files:
+
+* `before`: command, which is to be executed *before* locking the system
+* `after`: command, which is to be executed *after* unlocking the system
+* `radius`: default radius value
+* `time`: default times value
+
+Example config file:
+```ìni
+# /etc/betterlockscreen.conf or ~/.config/betterlockscreen.conf
+# ... other settings ... #
+before='razer-cli -b 0'     # Turn off RGB
+after='razer-cli -a -b 100' # Turn on RGB
+radius='10'                 # Set default radius
+time='3'                    # Set default times
+# ... other settings ... #
+```
+
+Any of these will be overriden by parameters, passed via the command line.
+
 ## Usage
 
 ```bash
-betterlockscreen_rapid radius times [command (optional)]
+betterlockscreen_rapid <radius> <times> <command>
 ```
 
 - `radius` is the kernel size of the box filter.
 - `times` is the number of times we filter the image.
-- `command (optional)` is the command to be executed upon unlocking the system.
+- `command` is the command to be executed upon unlocking the system.
 
 More information can be found at [i3lock-fancy-rapid][].
 
