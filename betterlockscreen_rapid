@@ -5,28 +5,10 @@
 # Project Repository: https://github.com/oakszyjrnrdy/betterlockscreen_rapid
 
 # check args
-if [ "$#" -lt "2" ]; then
-	echo "Usage: $0 radius time [command (optional)]" >&2
-	exit 3
-fi
-if [ "$1" -gt "0" ]; then
-	radius="$1"
-else
-	echo "Invalid argument radius $1" >&2
-	exit 1
-fi
-if [ "$2" -gt "0" ]; then
-	time="$2"
-else
-	echo "Invalid argument time $2" >&2
-	exit 2
-fi
-for arg in $( seq 3 $# )
-do
-    # echo "${!arg}"
-    lockargs="$lockargs "${!arg}""
-done
-# echo $lockargs
+#if [ "$#" -lt "2" ]; then
+#	echo "Usage: $0 radius time [command (optional)]" >&2
+#	exit 3
+#fi
 
 # read config
 config_file="betterlockscreen_rapid.conf"
@@ -36,6 +18,41 @@ source "/etc/$config_file"
 user_config_file="${XDG_CONFIG_HOME:-$HOME/.config}/betterlockscreen_rapid/$config_file"
 if [ -f "$user_config_file" ]; then
 	source "$user_config_file"
+fi
+
+if [ "$1" -gt "0" 2> /dev/null ]; then
+	radius="$1"
+else
+    if ! [ -n "$radius" ]; then
+        echo "Invalid argument radius $1" >&2
+        exit 1
+    fi
+fi
+
+if [ "$2" -gt "0" 2> /dev/null ]; then
+    time="$2"
+else
+    if ! [ -n "$time" ]; then
+        echo "Invalid argument time $2" >&2
+        exit 2
+    fi
+fi
+
+if [ -n "$3" ]; then
+    after=""
+fi
+
+# Override command to be executed upon unlock
+for arg in $( seq 3 $# )
+do
+    # echo "${!arg}"
+    after="$after "${!arg}""
+done
+# echo $after
+
+# run command before locking
+if [ -n "$before" ]; then
+    $before &> /dev/null
 fi
 
 # run command
@@ -51,4 +68,4 @@ i3lock-fancy-rapid "$radius" "$time" \
 	--radius "20" --ring-width "4" --veriftext '' --wrongtext '' \
 	--verifcolor "$verifcolor" --timecolor "$timecolor" --datecolor "$datecolor" \
 	--time-font "$font" --date-font "$font" --layout-font "$font" --verif-font "$font" --wrong-font "$font" \
-	--noinputtext '' --force-clock --pass-media-keys -n; $lockargs
+	--noinputtext '' --force-clock --pass-media-keys -n; $after
