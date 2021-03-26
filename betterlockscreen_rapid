@@ -52,7 +52,7 @@ done
 
 # run command before locking
 if [ -n "$before" ]; then
-    $before &> /dev/null
+    eval $before &> /dev/null
 fi
 
 # run command
