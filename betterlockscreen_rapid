@@ -58,14 +58,16 @@ fi
 # run command
 i3lock-fancy-rapid "$radius" "$time" \
 	-t \
-	--time-pos 'x+110:h-70' \
-	--date-pos 'x+43:h-45' \
-	--clock --date-align 1 --date-str "$locktext" \
+	--time-pos 'x+1010:h-540' \
+        --time-size 100 \
+	--date-pos 'x+875:h-480' \
+        --date-size 25 \
+	--clock --date-align 1 --date-str "%A, %d. %m. %Y" \
 	--inside-color "$insidecolor" --ring-color "$ringcolor" --line-uses-inside \
 	--keyhl-color "$keyhlcolor" --bshl-color "$bshlcolor" --separator-color "$separatorcolor" \
 	--insidever-color "$insidevercolor" --insidewrong-color "$insidewrongcolor" \
-	--ringver-color "$ringvercolor" --ringwrong-color "$ringwrongcolor" --ind-pos 'x+280:h-70' \
-	--radius "20" --ring-width "4" --verif-text '' --wrong-text '' \
+	--ringver-color "$ringvercolor" --ringwrong-color "$ringwrongcolor" --ind-pos 'x+1012:h-552' \
+	--radius "225" --ring-width "4" --verif-text '' --wrong-text '' \
 	--verif-color "$verifcolor" --time-color "$timecolor" --date-color "$datecolor" \
 	--time-font "$font" --date-font "$font" --layout-font "$font" --verif-font "$font" --wrong-font "$font" \
 	--noinput-text '' --force-clock --pass-media-keys -n; eval $after
